@@ -386,6 +386,25 @@ After that, run git clone YOUR_HTTPS_URL. This command pulls the remote reposito
 
 ![clone repo](images/gitclonenewrepo.PNG)
 
+### How to Push a Repository in Git (git push)
+
+To push a local branch to remote repository 
+
+```
+git push -u origin `Your_Banch_Name`
+```
+
+```
+git push -u origin testApp
+```
+![git push new branch to remote](images/pushtoremote.PNG)
+
+Output above says, you are not allowed to push the branch to remote. Go to github remote repository and update the permisssions.
+
+If you are permitted to push to remote, you should be able to see the screen like this in your gitHub account
+
+![git push new branch ](img)
+
 
 ### How to Use Branches in Git
 
@@ -439,13 +458,67 @@ git branch -r
 
 Now let us make some changes in the new branch.
 
+##### Example (Hands on)
+
 Open the project in sts, modify the ***pom.xml*** and ***application.properties*** so that we can work on h2 database.
 
+Task:
 
 1. **pom.xml** : Commented the dependency on sql connector and uncommenting h2 database dependency
 2. **application.properties** : Commented mysql properties and uncommented h2 properties
 
-Lets check the 
+Run & test the application. If all your changes are working properly. You can now commit the changes. 
+
+**Try doing it by yourself**
+
+The commands to execute:
+
+```
+git status - Your modified files should be listed
+git add - Add all the files 
+git commit -m "Relevent message" 
+```
+
+#### git merge 
+
+git merge merges the changes of one branch to another branch. 
+
+You can merge the branches locally or you can also push the new branch to remote and raise the merge request.
+So that all the code pushed by the developers are merged remotely on the git. 
+
+1. [git merge locally](#git-merge-locally)
+
+2. [git merge remotely](#git-merge-remotely)
+
+#### git merge locally
+
+Lets merge the changes we made in the testApp branch into the master branch by running git merge testApp. You will see all the changes made in the testApp branch reflected on the main branch. You should also receive a response similar to this:
+
+After committing your testApp branch, switch back to the master branch by running this command: 
+
+```
+git checkout master
+```
+
+Observe that there is no -b. This is because we are not creating a new branch but rather switching to an existing one.
+
+```
+git merge testApp
+```
+
+![git merge](images/gitmerge.PNG)
+
+
+#### git merge remotely
+
+Lets merge the changes we made in the testApp branch into the master branch remotely. 
+
+After committing your testApp branch, push the branch to remote repository and raise the merge request 
+
+Follow the steps:
+
+1. Push the branch to remote repository 
+2. Raise merge request 
 
 
 
