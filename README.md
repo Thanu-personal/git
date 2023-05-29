@@ -14,7 +14,7 @@ import: https://raw.githubusercontent.com/LiaTemplates/algebrite/0.2.1/README.md
         https://raw.githubusercontent.com/liaTemplates/TextAnalysis/main/README.md
 
 -->
-# Learn Git
+# Learn Git (Global Information Tracker)
 <br>
 ![Git - version control](images/homepage.png)
 
@@ -165,13 +165,6 @@ $ git --version
 git version 2.9.2
 ```
 
-4. Configure your Git username and email using the following commands, replacing xyz's name with your own. These details will be associated with any commits that you create:
-
-```
-$ git config --global user.name "xyz"
-$ git config --global user.email "xyz@swayaan.com"
-
-```
 
 ### Install Git on Windows
 
@@ -187,13 +180,6 @@ git version 2.39.2.windows.1
 ```
 ![git version](images/gitversion.PNG)
 
-4. Configure your Git username and email using the following commands, replacing xyz's name with your own. These details will be associated with any commits that you create:
-
-```
-$ git config --global user.name "xyz"
-$ git config --global user.email "xyz@swayaan.com"
-
-```
 ### Install Git on Linux
 
 1. Download the latest Git for [Linux installer](https://git-scm.com/download/linux).
@@ -206,7 +192,9 @@ git version 2.39.2.windows.1
 ```
 ![git version](images/gitversion.PNG)
 
-3. Configure your Git username and email using the following commands, replacing xyz's name with your own. These details will be associated with any commits that you create:
+## Configuring Git
+
+Configure your Git username and email using the following commands, replacing xyz's name with your own. These details will be associated with any commits that you create:
 
 ```
 $ git config --global user.name "xyz"
@@ -214,7 +202,6 @@ $ git config --global user.email "xyz@swayaan.com"
 
 ```
 
-## Git SSH
 ## Getting started - Create a initial project with Git (GitHub)
 
 * Lets create a folder in our local machine. For ex: TodoApp
@@ -534,6 +521,57 @@ If you are permitted to push to remote, you should be able to see the screen lik
 
 
 ![git branches](images/gitbranchlist.PNG)
+
+
+### Other GIT commands
+  
+Git help command  
+
+```
+$ git --help
+```
+This command guides the user.
+
+![git help](images/githelp.png)
+
+#### git restore
+
+Restore working tree files.
+
+The "restore" command helps to unstage or even discard uncommitted local changes.
+
+On the one hand, the command can be used to undo the effects of git add and unstage changes you have previously added to the Staging Area.
+
+On the other hand, the restore command can also be used to discard local changes in a file, thereby restoring its last committed state.
+
+```
+ git restore --staged src/main/resources/application.properties
+
+```
+
+
+#### git log
+
+Show commit logs
+
+![git log](images/gitlog.PNG)
+
+#### git diff
+
+Show changes between commits, commit and working tree, etc
+
+You can check the difference between files, commits, branches etc 
+
+![git diff](images/gitdiff.PNG)
+
+#### git switch 
+Switch branches.
+
+You can use the git switch - command to undo any changes you make and return to your previous branch.
+
+If you instead want to keep your changes and continue from here, you can use git switch -c <new-branch-name> to create a new branch from this point.
+
+
 
 
 
