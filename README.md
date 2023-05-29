@@ -503,7 +503,7 @@ Follow the steps:
 
 Steps:
 
-* On GitHub.com, navigate to the main page of the repository.
+* On GitHub.com, click on gitHub icon on the left corner and navigate to the main page of the repository.
 * Under your repository name, click  Pull requests.
 * click on compare & pull request
 
