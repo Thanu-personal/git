@@ -215,13 +215,244 @@ $ git config --global user.email "xyz@swayaan.com"
 ```
 
 ## Git SSH
-## Getting started - Create a initial project with Git
+## Getting started - Create a initial project with Git (GitHub)
 
-### 
+* Lets create a folder in our local machine. For ex: TodoApp
+* Open cmd prompt and navigate to the folder created.
+* Now to initialize your project, simply run [git init](#git-init).
+
+### git init
 
 
-### Setting up a repository 
-### Basic Git commands 
+This will tell Git to get ready to start watching your files for every change that occurs. It looks like this:
+
+
+![git init](images/gitinit.PNG)
+
+A response sent back telling me that my repository (repo) has been initialized. It is considered empty because we have not told Git what files to track.
+
+A repository is just another way to define a project being watched/tracked by Git.
+
+Before we proceed with learning other Git commands, let's talk about [GitHub](#github).
+
+## GitHub
+GitHub is an online hosting service for Git repositories. 
+
+GitHub lets you store your repo on their platform. Another awesome feature that comes with GitHub is the ability to collaborate with other developers from any location.
+
+### Create repository remotely in the GitHub
+
+Now that we have created and initialized our project locally, let's create a simple file todo.txt and push it to GitHub.
+
+* Go to the folder created. In my case d:/TodoApp
+* create a file todo.txt 
+* Add some content
+* [Lets push the repository to git](#how-to-push-a-repository-to-github) 
+
+![newdoc](images/newdoc.png)
+
+![todo txt file](images/todotxtfile.PNG)
+
+#### How to push a repository to GitHub
+
+1.  **Create a GitHub account**:
+
+        To be able to use GitHub, you will have to create an account first. You can do that on their [website](https://github.com/).
+
+2. **Create a repository**:
+        You can click on the + symbol on the top right corner of the page then choose "New repository". Give your repo a name then scroll down and click on "Create repository".
+
+        ![new repo](images/newrepo.png)
+
+        ![new todo repo](images/newtodorepo.png)
+
+        Once you create a new repository, you will be redirceted to the below page.
+
+        ![new todo repo created](images/newrepocreated.png)
+
+
+3. **Add and commit file(s)**:
+
+        Before we "add" and "commit" our files, you need to understand the stages of a file being tracked by Git.
+
+        **Committed state**
+        A file is in the committed state when all the changes made to the file have been saved in the local repo. Files in the committed stage are files ready to be pushed to the remote repo (on GitHub).
+
+        **Modified state**
+        A file in the modified state has some changes made to it but it's not yet saved. This means that the state of the file has been altered from its previous state in the committed state.
+
+        **Staged state**
+        A file in the staged state means it is ready to be committed. In this state, all necessary changes have been made so the next step is to move the file to the commit state.
+
+        To add and commit files to git, we use,
+
+        * [git add](#git-add) command
+        * [git status](#git-status) command
+        * [git commit](#git-commit) command
+
+4. [**Push the repository to GitHub**](#push-the-repository-to-github) 
+
+##### git add
+
+When we first initialized our project, the file was not being tracked by Git. To do that, we use this command **git add .** The period or dot that comes after add means all the files that exist in the repository. 
+
+If you want to add a specific file, maybe one named todo.txt, you use the command **git add todo.txt**
+
+To add a file to git, 
+
+* Right click in the todoApp folder and open `git bash`
+
+![git bash](images/gitbash.png)
+
+* Check the status of the files in the folder. use [git status](#git-status) command 
+* Add the files to git, use command `git add todo.txt` 
+* Again check the status. Now our file is in the staged state.
+* The next state for a file after the staged state is the committed state. To commit our file, we use the [git commit](#git-commit) command.
+
+##### git status
+
+To check status, 
+
+* Right click in the todoApp folder and open `git bash`
+
+![git bash](images/gitbash.png)
+
+* Check the status of the files in the folder. use [git status](#git-status) command 
+
+![git status](images/gitstatus.PNG)
+
+* <font color="red">Red </font> color says the file is in modified state 
+* <font color="success">Green </font> color says the file is in staged state 
+
+
+##### git commit 
+
+ To commit our file, we use the git commit -m "first commit" command.
+
+`git commit -m "relevent message for the commit" `
+
+The first part of the command git commit tells Git that all the files staged are ready to be committed so it is time to take a snapshot. 
+
+The second part -m "initial commit" is the commit message. -m is shorthand for message while the text inside the parenthesis is the commit message.
+
+After executing this command, you should get a response similar to this:
+
+![git commit](images/gitcommit.PNG)
+
+Now our file is in the committed state.
+
+
+##### Push the repository to GitHub
+
+
+We already have repository initialized. So lets concentrate on **…or push an existing repository from the command line** section
+
+![new todo repo created](images/newrepocreated.png)
+
+These are the commands:
+
+```
+git remote add origin https://github.com/Thanu-personal/todoApp.git
+git branch -M main
+git push -u origin main
+
+```
+
+> The first command git remote add origin https://github.com/Thanu-personal/todoApp.git creates a connection between your local repo and the remote repo on Github.
+
+> The second command git branch -M main changes your main branch's name to "main". The default branch might be created as "master", but "main" is the standard name for this repo now. There is usually no response here.
+
+> The last command git push -u origin main pushes your repo from your local device to GitHub. You should get a response similar to this:
+
+![remote origin](images/remoteorigin.PNG)
+
+
+### How to Pull a Repository in Git (git clone)
+
+
+To pull in Git means to clone a remote repository's current state into your computer/repository. 
+
+This comes in handy when you want to work on your repo from a different computer or when you are contributing to an open source project online.
+
+[Go to GitHub](https://github.com/vijaynvb/todoapi), and on your repository's main page you should see a green button that says "Code". When you click on the button, you should see some options in a dropdown menu. Go on and copy the HTTPS URL.
+
+![git clone](images/gitclone.png)
+
+After that, run git clone YOUR_HTTPS_URL. This command pulls the remote repository into your local computer in a folder called todoJavaApp. 
+
+`git clone YOUR_HTTPS_URL`
+
+`git clone https://github.com/vijaynvb/todoapi.git`
+
+![clone repo](images/gitclonenewrepo.PNG)
+
+
+### How to Use Branches in Git
+
+With branches, you can create a copy of a file you would like to work on without messing up the original copy. You can either merge these changes to the original copy or just let the branch remain independent.
+
+Before we go into using branches, visual representation of our repo which looks like this:
+
+![git branch](images/gitbranch.PNG)
+
+![git commits](images/gitcommits.PNG)
+
+The images above shows our master branch with the last 7 commits.
+
+You can checkout to the any intermediate branch & continue working or you can also create a new branch.
+
+To list out all the branches in the repository, we use the command, [git branch](#git-branch)
+
+Lets create a new branch called `testApp` to see what my App would look like with more tasks included.
+
+To create a new branch, we use [git checkout](#git-checkout) command
+
+#### git checkout 
+
+To create a new branch, run this command: 
+
+``` 
+git checkout -b testApp
+
+```
+
+> checkout tells Git it is supposed to switch to a new branch. -b tells Git to create a new branch. testApp is the name of the branch to be created and switched to. Here is the response you should get:
+
+
+![git checkout](images/gitchckout.PNG)
+
+#### git branch 
+
+To list out the local branches in the repository, we use
+
+```
+git branch 
+```
+
+To list out the local branches in the repository, we use
+
+```
+git branch -r 
+```
+
+![git branch](images/gitbranch1.PNG)
+
+Now let us make some changes in the new branch.
+
+Open the project in sts, modify the ***pom.xml*** and ***application.properties*** so that we can work on h2 database.
+
+
+1. **pom.xml** : Commented the dependency on sql connector and uncommenting h2 database dependency
+2. **application.properties** : Commented mysql properties and uncommented h2 properties
+
+Lets check the 
+
+
+
+
+
+
+
 
 
 
