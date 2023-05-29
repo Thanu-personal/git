@@ -386,25 +386,6 @@ After that, run git clone YOUR_HTTPS_URL. This command pulls the remote reposito
 
 ![clone repo](images/gitclonenewrepo.PNG)
 
-### How to Push a Repository in Git (git push)
-
-To push a local branch to remote repository 
-
-```
-git push -u origin `Your_Banch_Name`
-```
-
-```
-git push -u origin testApp
-```
-![git push new branch to remote](images/pushtoremote.PNG)
-
-Output above says, you are not allowed to push the branch to remote. Go to github remote repository and update the permisssions.
-
-If you are permitted to push to remote, you should be able to see the screen like this in your gitHub account
-
-![git push new branch ](img)
-
 
 ### How to Use Branches in Git
 
@@ -490,7 +471,7 @@ So that all the code pushed by the developers are merged remotely on the git.
 
 2. [git merge remotely](#git-merge-remotely)
 
-#### git merge locally
+##### git merge locally
 
 Lets merge the changes we made in the testApp branch into the master branch by running git merge testApp. You will see all the changes made in the testApp branch reflected on the main branch. You should also receive a response similar to this:
 
@@ -509,7 +490,7 @@ git merge testApp
 ![git merge](images/gitmerge.PNG)
 
 
-#### git merge remotely
+##### git merge remotely
 
 Lets merge the changes we made in the testApp branch into the master branch remotely. 
 
@@ -517,11 +498,42 @@ After committing your testApp branch, push the branch to remote repository and r
 
 Follow the steps:
 
-1. Push the branch to remote repository 
-2. Raise merge request 
+1. [Push the branch to remote repository](#how-to-push-a-repository-in-git-git-push)
+2. Raise merge request on the gitHub:
+
+Steps:
+
+* On GitHub.com, navigate to the main page of the repository.
+* Under your repository name, click  Pull requests.
+* click on compare & pull request
+
+![pull request](images/pullrequest1.png)
+
+* Enter the message & click on create request
+* You can now merge the pull request 
+![merge pull request](images/mergepullrequest.PNG)
+
+#### How to Push a branch in Git (git push)
+
+To push a local branch to remote repository 
+
+```
+git push -u origin `Your_Banch_Name`
+```
+
+```
+git push -u origin testApp
+```
+![git push new branch to remote](images/pushtoremote.PNG)
+
+Output above says, you are not allowed to push the branch to remote. Go to github remote repository and update the permisssions.
+
+If you are permitted to push to remote, you should be able to see the screen like this in your gitHub account
+
+![git push new branch ](images/gitpushsuccess.PNG)
 
 
-
+![git branches](images/gitbranchlist.PNG)
 
 
 
